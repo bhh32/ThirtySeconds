@@ -313,6 +313,41 @@ Prefab:
       propertyPath: collider
       value: 
       objectReference: {fileID: 2082321714}
+    - target: {fileID: 137586608936295974, guid: 0282e8236bb08a14ebc27f5a56a8c507,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 66b825c68dc05494493aa53860025980, type: 2}
+    - target: {fileID: 137232009430757628, guid: 0282e8236bb08a14ebc27f5a56a8c507,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9cbba3fc3748eb74996ecc3b348a7fab, type: 2}
+    - target: {fileID: 137873525575805110, guid: 0282e8236bb08a14ebc27f5a56a8c507,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dba5a1a031732ec49b83b48fb056cae8, type: 2}
+    - target: {fileID: 137527668224732094, guid: 0282e8236bb08a14ebc27f5a56a8c507,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ba66a1c2cc286e4d9e0288a500ac0fc, type: 2}
+    - target: {fileID: 137101928201230092, guid: 0282e8236bb08a14ebc27f5a56a8c507,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 32ec8c9a62275414c93a9d0bbe8d55f7, type: 2}
+    - target: {fileID: 137709534441256742, guid: 0282e8236bb08a14ebc27f5a56a8c507,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a5ece828cee05f45a61f1bd530881b7, type: 2}
+    - target: {fileID: 137041044805614994, guid: 0282e8236bb08a14ebc27f5a56a8c507,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9984dc75c4f728e498d7f5ac7804d269, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0282e8236bb08a14ebc27f5a56a8c507, type: 2}
   m_IsPrefabParent: 0
@@ -481,6 +516,10 @@ Prefab:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: ee3f1db8294d13d4dbf68641b9914937, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a05c532cac95af5459141c553d64cf42, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ee3f1db8294d13d4dbf68641b9914937, type: 3}
   m_IsPrefabParent: 0
