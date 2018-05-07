@@ -9,13 +9,15 @@ public class PlayerAnim : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] CapsuleCollider collider;
     float colliderStartSize;
-    [SerializeField] float colliderReset = 5f;
+    [SerializeField] float colliderReset;
+    [SerializeField] float colliderResetStart = 0f;
 
     bool isJumping = false;
 	
     void Start()
     {
         colliderStartSize = collider.height;
+        colliderReset = colliderResetStart;
         Debug.Log(colliderStartSize);
     }
 
@@ -33,11 +35,17 @@ public class PlayerAnim : MonoBehaviour
             anim.SetBool("isJumping", true);
         else
             anim.SetBool("isJumping", false);
+    }
 
+    void OnCollisionExit(Collision other)
+    {
+        if(other.gameObject.CompareTag("Ground"))
+            collider.height = 1.75f;
+    }
 
-        if (anim.GetCurrentAnimatorStateInfo(0).IsTag("Jumping"))
-            collider.height = 1f;
-        else
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
             collider.height = colliderStartSize;
     }
 }

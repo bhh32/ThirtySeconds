@@ -19,10 +19,15 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("Damage Taken!");
         currentHealth -= damage;
 
         if (currentHealth <= 0f)
             Reset();
+    }
+
+    public void GiveDamage(GameObject obj, float damage)
+    {
     }
 
     void Reset()
