@@ -25,7 +25,7 @@ public class UITimer : MonoBehaviour
         timerDisplay.text = timer.ToString();
         if (timer <= 0)
         {
-            SceneManager.LoadScene("EvanDevScene");
+            timer = 30;
         }
 
     }

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: fe12c529c1615b942aa61b5aadb1a740
 timeCreated: 1525733056
+=======
+guid: 8c121a17254a48b408bb8ca86ea30c79
+timeCreated: 1525734282
+>>>>>>> evan
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}

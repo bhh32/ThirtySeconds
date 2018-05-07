@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: eaad91720e4b8324aa42863e024de90a
 timeCreated: 1525732959
+=======
+guid: 76542c4156129c545b53e3be94378ee3
+timeCreated: 1525733603
+>>>>>>> evan
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -8,7 +13,11 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+<<<<<<< HEAD
     sRGBTexture: 0
+=======
+    sRGBTexture: 1
+>>>>>>> evan
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -49,7 +58,11 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
+<<<<<<< HEAD
   textureType: 1
+=======
+  textureType: 0
+>>>>>>> evan
   textureShape: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0

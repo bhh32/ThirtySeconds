@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 511ac0a03c579f648b9ae9a06f4c09df
 folderAsset: yes
 timeCreated: 1525732933
+=======
+guid: bcc47b4138197064bbc1dad2cf06efe2
+folderAsset: yes
+timeCreated: 1525733606
+>>>>>>> evan
 licenseType: Free
 DefaultImporter:
   userData: 

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 337ac76165b3b314fbec884368bf8084
 timeCreated: 1525732937
+=======
+guid: 5de47a9863804cb49a61aaf8204a1fe0
+timeCreated: 1525733616
+>>>>>>> evan
 licenseType: Free
 NativeFormatImporter:
   mainObjectFileID: 2100000

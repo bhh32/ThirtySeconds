@@ -39,7 +39,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+<<<<<<< HEAD:Assets/Models/Player/Materials/Boy_Hair_diffuse.mat
         m_Texture: {fileID: 2800000, guid: b293b23b1ed0f354cb37df189656ee1d, type: 3}
+=======
+        m_Texture: {fileID: 2800000, guid: 9ab573259402a3b40a5cd400f0bd8b21, type: 3}
+>>>>>>> evan:Assets/Models/Player/Materials/Boy_Hair_diffuse.mat
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
