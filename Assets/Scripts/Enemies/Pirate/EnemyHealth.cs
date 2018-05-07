@@ -24,7 +24,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         ray.origin = origin;
 
         RaycastHit hit;
-        Debug.DrawRay(ray.origin, obj.transform.position, Color.red);
 
         if (Physics.Raycast(ray, out hit, 3f))
         {

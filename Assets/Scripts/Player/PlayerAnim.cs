@@ -7,8 +7,8 @@ using UnityEngine;
 public class PlayerAnim : MonoBehaviour 
 {
     [SerializeField] Animator anim;
-    [SerializeField] CapsuleCollider collider;
-    float colliderStartSize;
+    [SerializeField] BoxCollider collider;
+    Vector3 colliderStartSize;
     [SerializeField] float colliderReset;
     [SerializeField] float colliderResetStart = 0f;
 
@@ -16,9 +16,8 @@ public class PlayerAnim : MonoBehaviour
 	
     void Start()
     {
-        colliderStartSize = collider.height;
+        colliderStartSize = collider.size;
         colliderReset = colliderResetStart;
-        Debug.Log(colliderStartSize);
     }
 
 	// Update is called once per frame
@@ -39,13 +38,16 @@ public class PlayerAnim : MonoBehaviour
 
     void OnCollisionExit(Collision other)
     {
-        if(other.gameObject.CompareTag("Ground"))
-            collider.height = 1.75f;
+        if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Enemy"))
+        {
+            Vector3 tempSize = new Vector3(collider.size.x, 1f, collider.size.z);
+            collider.size = tempSize;
+        }
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Ground"))
-            collider.height = colliderStartSize;
+        if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Enemy"))
+            collider.size = colliderStartSize;
     }
 }
