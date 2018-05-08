@@ -40,7 +40,7 @@ public class PlayerAnim : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Enemy"))
         {
-            Vector3 tempSize = new Vector3(collider.size.x, 1.75f, collider.size.z);
+            Vector3 tempSize = new Vector3(collider.size.x, 1.5f, collider.size.z);
             collider.size = tempSize;
         }
     }

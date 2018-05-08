@@ -1,23 +1,13 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: ba9dd6ac47b72f14f9a17e1f5702c08e
-timeCreated: 1525732957
-=======
-guid: 528e87520ef61794585a678e09d7608e
-timeCreated: 1525733637
->>>>>>> evan
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
+  externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-<<<<<<< HEAD
     sRGBTexture: 0
-=======
-    sRGBTexture: 1
->>>>>>> evan
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -58,11 +48,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
-<<<<<<< HEAD
   textureType: 1
-=======
-  textureType: 0
->>>>>>> evan
   textureShape: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
@@ -70,12 +56,14 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
