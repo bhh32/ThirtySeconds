@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cannon : MonoBehaviour 
 {
     [SerializeField] float firePower;
+    [SerializeField] AudioSource audio;
 
     void OnTriggerEnter(Collider other)
     {
@@ -16,6 +17,8 @@ public class Cannon : MonoBehaviour
                 rb.AddForce(firePower * Time.deltaTime, firePower * Time.deltaTime, 0f, ForceMode.Impulse);
             else if (firePower < 0)
                 rb.AddForce(firePower * Time.deltaTime, (firePower * -1f) * Time.deltaTime, 0f, ForceMode.Impulse);
+
+            audio.PlayOneShot(audio.clip);
         }
     }
 }

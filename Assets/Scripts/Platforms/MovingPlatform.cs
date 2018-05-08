@@ -12,23 +12,27 @@ public class MovingPlatform : MonoBehaviour
     {
         if (isVertical == true)
         {
-            if (transform.localPosition.y >= points[1].transform.localPosition.y
+            if (transform.localPosition.y >= points[0].transform.localPosition.y
                 ||
-                transform.localPosition.y <= points[0].transform.localPosition.y)
+                transform.localPosition.y <= points[1].transform.localPosition.y)
             {
                 moveSpeed *= -1;
             }
+
+            transform.Translate(0f, moveSpeed * Time.deltaTime, 0f);
         }
         else
         {
-            if (transform.localPosition.y >= points[1].transform.localPosition.x
+            if (transform.localPosition.x >= points[0].transform.localPosition.x
                 ||
-                transform.localPosition.y <= points[0].transform.localPosition.x)
+                transform.localPosition.x <= points[1].transform.localPosition.x)
             {
                 moveSpeed *= -1;
             }
+
+            transform.Translate(moveSpeed * Time.deltaTime, 0f, 0f);
         }
 
-        transform.Translate(0f, moveSpeed * Time.deltaTime, 0f);
+
     }
 }

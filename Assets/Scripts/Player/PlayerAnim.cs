@@ -6,13 +6,21 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour 
 {
+    [Header("Animation")]
     [SerializeField] Animator anim;
+
+    [Header("Collider Settings")]
     [SerializeField] BoxCollider collider;
     Vector3 colliderStartSize;
     [SerializeField] float colliderReset;
     [SerializeField] float colliderResetStart = 0f;
 
     bool isJumping = false;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource audio;
+    [SerializeField] AudioClip clip;
+    [SerializeField] bool hasPlayed = false;
 	
     void Start()
     {
@@ -30,10 +38,23 @@ public class PlayerAnim : MonoBehaviour
             anim.SetFloat("speed", 0f);
 
         // Jumping Animations
-        if (Input.GetKey(KeyCode.Space) && !isJumping && !anim.GetBool("isJumping"))
+        if (Input.GetAxis("Jump") > 0f && !isJumping && !anim.GetBool("isJumping"))
+        {
+            if (!audio.isPlaying && !hasPlayed)
+            {
+                audio.PlayOneShot(clip);
+                hasPlayed = !hasPlayed;
+            }
             anim.SetBool("isJumping", true);
+        }
         else
             anim.SetBool("isJumping", false);
+
+        if (Input.GetAxis("Crouch") != 0f || Input.GetAxis("Controller Crouch") > .3f)
+            anim.SetBool("isCrouching", true);
+        else
+            anim.SetBool("isCrouching", false);
+
     }
 
     void OnCollisionExit(Collision other)
@@ -48,6 +69,9 @@ public class PlayerAnim : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Enemy"))
+        {
             collider.size = colliderStartSize;
+            hasPlayed = false;
+        }
     }
 }
