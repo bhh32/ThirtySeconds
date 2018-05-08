@@ -8,10 +8,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public float currentHealth { get; private set; }
     public int lives { get; private set; }
 
+    [SerializeField] PlayerCheckpoint checkpoint;
+
 	// Use this for initialization
 	void Start () 
     {
-        maxHealth = 25f;
+        maxHealth = 1f;
         currentHealth = maxHealth;
 
         lives = 3;
@@ -38,6 +40,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         if (lives <= 0)
             EndGame();
+
+        transform.position = checkpoint.currentCheckpoint;
     }
 
     void EndGame()

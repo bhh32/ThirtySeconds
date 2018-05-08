@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿/** Written By Bryan Hyland **/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

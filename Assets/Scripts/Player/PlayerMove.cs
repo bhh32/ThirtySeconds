@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour
     void Move()
     {
         float moveRight = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        bool jump = Input.GetKey(KeyCode.Space);
+        bool jump = Input.GetKeyDown(KeyCode.Space);
 
         // Movement
         if (moveRight > 0f)
