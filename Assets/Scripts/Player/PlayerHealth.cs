@@ -52,8 +52,10 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         if (currentHealth <= 0f)
         {
-            if(GameObject.FindGameObjectWithTag("Player") != null)
+            if (gameObject.activeSelf)
                 Reset();
+            else
+                EndGame();
         }
     }
 
@@ -70,16 +72,17 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
         audio.PlayOneShot(clip);
 
-
         transform.position = checkpoint.currentCheckpoint;
     }
 
     void EndGame()
     {
-        updateUI.lose = true;
+        if (lives <= 0f)
+            updateUI.lose = true;
+        else
+            updateUI.win = true;
+        
         OnEndGame -= EndGame;
-        updateUI.win = false;
-        updateUI.lose = false;
 
         gameObject.SetActive(false);
     }

@@ -25,19 +25,20 @@ public class UITimer : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        var player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player.activeSelf)
+        {
         timer -= Time.deltaTime;
         int timerTrunc = (int)timer;
         timerDisplay.text = string.Format("Time Left: {0}", timerTrunc.ToString());
-        if (timer <= 0f)
-        {
-            var player = GameObject.FindGameObjectWithTag("Player");
-            if (player.activeSelf)
+            if (timer <= 0f)
             {
+            
                 updateUI.OnHitTaken();
                 OnTimerUpdate();
             }
         }
-
     }
 
     void ResetTimer()

@@ -38,6 +38,6 @@ public class EnemyMove : MonoBehaviour
     {
 
         if (other.collider.CompareTag("Player"))
-            gameObject.GetComponent<EnemyHealth>().GiveDamage(other.gameObject, damage);
+            other.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
     }
 }

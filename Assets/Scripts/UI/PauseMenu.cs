@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (EventSystem.current.currentSelectedGameObject == null)
+        if (EventSystem.current.currentSelectedGameObject == null && pauseMenu.gameObject.activeSelf)
             EventSystem.current.SetSelectedGameObject(EventSystem.current.firstSelectedGameObject);
     }
 

@@ -2,31 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class EndGameManager : MonoBehaviour 
 {
     [SerializeField] UIHitpoints winLose;
     [SerializeField] GameObject endGameCanvas;
-    [SerializeField] Text loseText;
-    [SerializeField] Text winText;
+    [SerializeField] GameObject playAgainButton;
 	
 	// Update is called once per frame
-	void FixedUpdate () 
+	void FixedUpdate ()
     {        
-        if (winLose.lose)
-        {
+        if (winLose.lose || winLose.win)
             endGameCanvas.SetActive(true);
-            loseText.enabled = true;
 
-            Time.timeScale = 0f;
-        }
-        else if (winLose.win)
+        if (endGameCanvas.activeSelf)
         {
-            endGameCanvas.SetActive(true);
-            winText.enabled = true;
-
-            Time.timeScale = 0f;
+            if (EventSystem.current.firstSelectedGameObject != playAgainButton)
+                EventSystem.current.firstSelectedGameObject = playAgainButton;
+        
+            Debug.Log(EventSystem.current.firstSelectedGameObject.name);
+            if (EventSystem.current.currentSelectedGameObject == null)
+                EventSystem.current.SetSelectedGameObject(EventSystem.current.firstSelectedGameObject);
         }
-
-	}
+    }
 }

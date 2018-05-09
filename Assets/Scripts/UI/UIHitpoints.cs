@@ -13,9 +13,9 @@ public class UIHitpoints : MonoBehaviour
     public GameObject life3;
     [SerializeField] PlayerHealth playerHealth;
 
-    public bool win { get; set; }
+    public bool win;
 
-    public bool lose { get; set; }
+    public bool lose;
 
     UITimer timeout;
 
