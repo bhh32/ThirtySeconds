@@ -760,6 +760,7 @@ GameObject:
   - component: {fileID: 65280422460642504}
   - component: {fileID: 114978890032042498}
   - component: {fileID: 114796450309069062}
+  - component: {fileID: 65925197711543198}
   m_Layer: 0
   m_Name: Pirate Enemy
   m_TagString: Enemy
@@ -1993,6 +1994,18 @@ BoxCollider:
   m_GameObject: {fileID: 1819092702547400}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.47362068, y: 0.64602953, z: 0.20287912}
+  m_Center: {x: 0.02549018, y: 0.34704837, z: -0.007452693}
+--- !u!65 &65925197711543198
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1819092702547400}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.47362068, y: 0.64602953, z: 0.20287912}

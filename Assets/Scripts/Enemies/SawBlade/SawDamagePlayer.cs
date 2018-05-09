@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class SawDamagePlayer : MonoBehaviour
 {
-    PlayerHealth playerhealth;
-
-    private void Start()
+    private void OnCollisionEnter(Collision other)
     {
-        playerhealth = GetComponent<PlayerHealth>();
-    }
-    private void OnCollisionEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        if (other.collider.CompareTag("Player"))
         {
-            playerhealth.TakeDamage(1);
+            var playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+            playerHealth.TakeDamage(1f);
         }
     }
 }

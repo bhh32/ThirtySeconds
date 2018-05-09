@@ -22,7 +22,7 @@ public class EnemyMove : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("TurnTrigger"))
+        if (other.gameObject.CompareTag("TurnTrigger") || other.gameObject.CompareTag("Enemy"))
         {
             if (transform.rotation.y == startRotation.y)
             {
@@ -32,11 +32,11 @@ public class EnemyMove : MonoBehaviour
             else
                 transform.rotation = startRotation;
         }
-       
     }
 
     void OnCollisionEnter(Collision other)
     {
+
         if (other.collider.CompareTag("Player"))
             gameObject.GetComponent<EnemyHealth>().GiveDamage(other.gameObject, damage);
     }
