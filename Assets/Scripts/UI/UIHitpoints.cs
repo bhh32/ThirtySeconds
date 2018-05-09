@@ -4,46 +4,55 @@ using UnityEngine;
 
 public class UIHitpoints : MonoBehaviour
 {
+    public delegate void HitTaken();
+    public HitTaken OnHitTaken;
+
     int hitpoints = 3;
     public GameObject life1;
     public GameObject life2;
     public GameObject life3;
+    [SerializeField] PlayerHealth playerHealth;
+
+    public bool win { get; set; }
+
+    public bool lose { get; set; }
 
     UITimer timeout;
-
-    public bool debugDamage = false;
 
 	// Use this for initialization
 	void Start ()
     {
         timeout = GetComponent<UITimer>();
+
+        win = false;
+        lose = false;
+
+        OnHitTaken += TakeHit;
 	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    void TakeHit()
     {
-		if (debugDamage == true)
+        if (timeout.timer > 0f)
         {
-            debugDamage = false;
-            hitpoints -= 1;
+            if (life1.activeSelf)
+                life1.SetActive(false);
+            else if (life2.activeSelf)
+                life2.SetActive(false);
+            else if (life3.activeSelf)
+                life3.SetActive(false);
         }
 
-        if (timeout.timer <= 0)
+        if (timeout.timer <= 0f)
         {
-            hitpoints -= 1;
-        }
-        
-        if (hitpoints == 2)
-        {
-            Destroy(life1.gameObject);
-        }
-        else if (hitpoints == 1)
-        {
-            Destroy(life2.gameObject);
-        }
-        else if (hitpoints == 0)
-        {
-            Destroy(life3.gameObject);
+            if (life1.activeSelf)
+                life1.SetActive(false);
+            else if (life2.activeSelf)
+                life2.SetActive(false);
+            else if (life3.activeSelf)
+                life3.SetActive(false);
+
+            if(playerHealth.gameObject.activeSelf)
+                playerHealth.lives--;
         }
     }
 }

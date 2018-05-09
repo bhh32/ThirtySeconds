@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerKillEnemy : MonoBehaviour
 {
     [SerializeField] float damage;
+    [SerializeField] AudioSource audio;
+    [SerializeField] AudioClip clip;
 
     void OnCollisionEnter(Collision other)
     {  
@@ -18,7 +20,10 @@ public class PlayerKillEnemy : MonoBehaviour
         if (Physics.Raycast(ray, out hit, 2.5f))
         {
             if (hit.collider.CompareTag("Enemy"))
+            {
                 hit.collider.GetComponent<EnemyHealth>().TakeDamage(damage);
+                audio.PlayOneShot(clip);
+            }
         }
     }
 }

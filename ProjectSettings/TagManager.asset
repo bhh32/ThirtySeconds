@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - LevelGeometry
   - Checkpoint
+  - Win/Loss Canvas
+  - Win Text
+  - Lose Text
   layers:
   - Default
   - TransparentFX

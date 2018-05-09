@@ -15,6 +15,8 @@ public class PlayerMove : MonoBehaviour
 
     Quaternion startFacingRight; // Container to keep the starting rotation
 
+    bool isCrouching = false;
+
     void Start()
     {        
         startFacingRight = transform.rotation;
@@ -30,10 +32,11 @@ public class PlayerMove : MonoBehaviour
     void Move()
     {
         float moveRight = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        bool jump = Input.GetKeyDown(KeyCode.Space);
+        float jump = Input.GetAxis("Jump"); //Input.GetKeyDown(KeyCode.Space);
+        //bool controllerJump = Input.GetButtonDown("joystick button 0");
 
         // Movement
-        if (moveRight > 0f)
+        if (moveRight > 0f && !isCrouching)
         {
             if (transform.rotation.y != .7f)
             {
@@ -43,7 +46,7 @@ public class PlayerMove : MonoBehaviour
 
             transform.Translate(0, 0f, moveRight);
         }
-        else if (moveRight < 0f)
+        else if (moveRight < 0f && !isCrouching)
         {
             if (transform.rotation.y != startFacingRight.y * -1f)
             {
@@ -55,7 +58,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         // Jumping
-        if (jump && jumpCooldown <= 0f)
+        if (jump > 0 && jumpCooldown <= 0f && !isCrouching)
         {
             jumpCooldown = startJumpCooldown;
 
@@ -63,6 +66,11 @@ public class PlayerMove : MonoBehaviour
         }
         else
             jumpCooldown -= Time.deltaTime;
+
+        if (Input.GetAxis("Crouch") != 0f || Input.GetAxis("Controller Crouch") > 0f)
+            isCrouching = true;
+        else
+            isCrouching = false;
 
     }
 }

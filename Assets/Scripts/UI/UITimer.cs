@@ -8,25 +8,40 @@ using UnityEngine.SceneManagement;
 
 public class UITimer : MonoBehaviour
 {
-    public Text timerDisplay;
+    public delegate void UpdateTimer();
+    public UpdateTimer OnTimerUpdate;
 
-    public float timer = 30.0f;
+    public Text timerDisplay;
+    [SerializeField] UIHitpoints updateUI;
+
+    public float timer = 31.0f;
 
 	// Use this for initialization
 	void Start ()
     {
-		
+        OnTimerUpdate += ResetTimer;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
         timer -= Time.deltaTime;
-        timerDisplay.text = timer.ToString();
-        if (timer <= 0)
+        int timerTrunc = (int)timer;
+        timerDisplay.text = string.Format("Time Left: {0}", timerTrunc.ToString());
+        if (timer <= 0f)
         {
-            timer = 30;
+            var player = GameObject.FindGameObjectWithTag("Player");
+            if (player.activeSelf)
+            {
+                updateUI.OnHitTaken();
+                OnTimerUpdate();
+            }
         }
 
+    }
+
+    void ResetTimer()
+    {
+        timer = 31f;
     }
 }
