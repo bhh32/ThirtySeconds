@@ -4,7 +4,11 @@ guid: e25f8568a6c7029409fcc4da1296da6e
 timeCreated: 1525732958
 =======
 guid: b9f6897537ef1b14bbfcaaef686f2011
+<<<<<<< HEAD
 timeCreated: 1525733613
+>>>>>>> evan
+=======
+timeCreated: 1525797137
 >>>>>>> evan
 licenseType: Free
 TextureImporter:
@@ -14,9 +18,13 @@ TextureImporter:
     mipMapMode: 0
     enableMipMap: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
     sRGBTexture: 0
 =======
     sRGBTexture: 1
+>>>>>>> evan
+=======
+    sRGBTexture: 0
 >>>>>>> evan
     linearTexture: 0
     fadeOut: 0
@@ -59,9 +67,13 @@ TextureImporter:
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
 <<<<<<< HEAD
+<<<<<<< HEAD
   textureType: 1
 =======
   textureType: 0
+>>>>>>> evan
+=======
+  textureType: 1
 >>>>>>> evan
   textureShape: 1
   maxTextureSizeSet: 0
